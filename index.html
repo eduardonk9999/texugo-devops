@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Texugo-do-Mel: O Jogo</title>
+  <meta name="description" content="O bicho mais destemido do mundo, agora em 8 bits.">
+  <link rel="icon" href="assets/texugo_retrato.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="hud">
+    <a class="logo" href="#inicio">TEXUGO<span>.EXE</span></a>
+    <div class="score" aria-live="polite">
+      <span>1UP <b id="score">000000</b></span>
+      <span class="hi">HI <b id="hiscore">000000</b></span>
+    </div>
+    <nav>
+      <a href="#ficha">Ficha</a>
+      <a href="#dialogo">Lore</a>
+      <a href="#conquistas">Conquistas</a>
+      <a href="#ranking">Ranking</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- TELA DE TÍTULO -->
+    <section id="inicio" class="title-screen">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="moon" aria-hidden="true"></div>
+      <div class="mountains far" aria-hidden="true"></div>
+      <div class="mountains near" aria-hidden="true"></div>
+
+      <div class="title-content">
+        <p class="pre">TEXUGO GAMES apresenta</p>
+        <h1 class="game-title">
+          <span class="t1">TEXUGO</span>
+          <span class="t2">DO&nbsp;MEL</span>
+        </h1>
+        <p class="tagline">O bicho mais destemido do mundo</p>
+
+        <button class="hero-badger" id="badger" aria-label="Clique no texugo para ganhar pontos">
+          <img src="assets/texugo_corpo.png" alt="Texugo-do-mel em pixel art" width="64" height="64">
+        </button>
+        <p class="hint">clique no texugo (+100)</p>
+
+        <a class="press-start" href="#ficha">&#9654; PRESS START</a>
+      </div>
+
+      <div class="ground" aria-hidden="true"></div>
+    </section>
+
+    <!-- FICHA DO PERSONAGEM -->
+    <section id="ficha" class="section">
+      <h2 class="section-title"><span>&#9670;</span> Selecione seu personagem</h2>
+      <div class="char-sheet pixel-box">
+        <div class="portrait">
+          <img src="assets/texugo_retrato.png" alt="Retrato do texugo-do-mel" width="64" height="64">
+          <p class="char-name">MELLIVORA<br>CAPENSIS</p>
+          <p class="char-class">Classe: Bárbaro</p>
+          <p class="char-lvl">LV 99</p>
+        </div>
+        <div class="stats">
+          <div class="stat" data-value="99"><span>CORAGEM</span><div class="bar"><i></i></div><b>99</b></div>
+          <div class="stat" data-value="97"><span>TEIMOSIA</span><div class="bar"><i></i></div><b>97</b></div>
+          <div class="stat" data-value="88"><span>DEFESA</span><div class="bar"><i></i></div><b>88</b></div>
+          <div class="stat" data-value="74"><span>FORCA</span><div class="bar"><i></i></div><b>74</b></div>
+          <div class="stat" data-value="45"><span>VELOCIDADE</span><div class="bar"><i></i></div><b>45</b></div>
+          <div class="stat low" data-value="4"><span>PACIENCIA</span><div class="bar"><i></i></div><b>04</b></div>
+          <ul class="specs">
+            <li><b>Habitat</b> África, Oriente Médio e Índia</li>
+            <li><b>Tamanho</b> 60 a 77 cm de corpo</li>
+            <li><b>Peso</b> até 14 kg</li>
+            <li><b>Item favorito</b> favo de mel (com larvas)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIÁLOGO / CURIOSIDADES -->
+    <section id="dialogo" class="section">
+      <h2 class="section-title"><span>&#9670;</span> Lore do personagem</h2>
+      <div class="dialog pixel-box">
+        <img class="dialog-face" src="assets/texugo_retrato.png" alt="" width="64" height="64">
+        <div class="dialog-body">
+          <p class="dialog-name">TEXUGO:</p>
+          <p class="dialog-text" id="dialog-text" aria-live="polite"></p>
+        </div>
+        <button class="dialog-next" id="dialog-next" aria-label="Próxima fala">&#9660;</button>
+      </div>
+      <p class="dialog-count"><span id="dialog-idx">1</span>/<span id="dialog-total">6</span>. Clique em &#9660; ou aperte Enter</p>
+    </section>
+
+    <!-- CONQUISTAS -->
+    <section id="conquistas" class="section">
+      <h2 class="section-title"><span>&#9670;</span> Conquistas desbloqueadas</h2>
+      <div class="achievements">
+        <article class="ach pixel-box">
+          <div class="ach-icon icon-skin" aria-hidden="true"></div>
+          <h3>Pele de Borracha</h3>
+          <p>Pele grossa e frouxa: dá pra se virar dentro dela e morder quem tentou agarrar.</p>
+        </article>
+        <article class="ach pixel-box">
+          <div class="ach-icon icon-honey" aria-hidden="true"></div>
+          <h3>Ladrão de Mel</h3>
+          <p>Invade colmeia e aguenta as picadas pra comer o mel e as larvas.</p>
+        </article>
+        <article class="ach pixel-box">
+          <div class="ach-icon icon-snake" aria-hidden="true"></div>
+          <h3>Antiveneno</h3>
+          <p>Tem resistência a veneno de cobra e encara até naja.</p>
+        </article>
+        <article class="ach pixel-box">
+          <div class="ach-icon icon-shovel" aria-hidden="true"></div>
+          <h3>Escavador Pro</h3>
+          <p>Garras enormes que cavam toca e desenterram presa rapidinho.</p>
+        </article>
+        <article class="ach pixel-box">
+          <div class="ach-icon icon-key" aria-hidden="true"></div>
+          <h3>Fuga Épica</h3>
+          <p>Em cativeiro já foram vistos usando objetos pra escalar e escapar.</p>
+        </article>
+        <article class="ach pixel-box locked">
+          <div class="ach-icon icon-lock" aria-hidden="true"></div>
+          <h3>???</h3>
+          <p>Conquista secreta. Dica: &uarr;&uarr;&darr;&darr;&larr;&rarr;&larr;&rarr; B A</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- RANKING -->
+    <section id="ranking" class="section">
+      <h2 class="section-title"><span>&#9670;</span> Ranking dos destemidos</h2>
+      <div class="ranking pixel-box">
+        <table>
+          <thead><tr><th>RANK</th><th>NOME</th><th>SCORE</th></tr></thead>
+          <tbody>
+            <tr class="first"><td>1ST</td><td>TEXUGO</td><td>999999</td></tr>
+            <tr><td>2ND</td><td>CARCAJU</td><td>412000</td></tr>
+            <tr><td>3RD</td><td>LEAO</td><td>004200</td></tr>
+            <tr><td>4TH</td><td>NAJA</td><td>000666</td></tr>
+            <tr><td>5TH</td><td>ABELHA</td><td>000001</td></tr>
+            <tr class="you"><td>YOU</td><td>VOCE</td><td id="rank-you">000000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="walker" aria-hidden="true"><img src="assets/texugo_corpo.png" alt="" width="64" height="64"></div>
+    <p class="insert-coin">INSERT COIN</p>
+    <p class="credits">&copy; 2026 TEXUGO GAMES. Nenhuma abelha foi ferida nesse site.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="honey-rain" id="honey-rain" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "stampfly-sim",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "/Users/eduardosilva/Documents/stampfly-sim/tools/serve.py",
+        "8765"
+      ],
+      "port": 8765
+    },
+    {
+      "name": "texugo-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8777",
+        "--directory",
+        "/Users/eduardosilva/Documents/texugo-site"
+      ],
+      "port": 8777
+    }
+  ]
+}
