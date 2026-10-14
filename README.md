@@ -13,6 +13,7 @@ Site estático do texugo-do-mel servido por Nginx (Alpine) em container Docker.
     ├── style.css
     ├── script.js
     └── assets/
+
 ```
 
 ## Rodando com Docker
@@ -23,7 +24,7 @@ Build da imagem:
 docker build -t site-texugo:v1.0 .
 ```
 
-Subir o container:
+Subir o container:::
 
 ```bash
 docker run -d --name texugo -p 8080:80 site-texugo:v1.0
